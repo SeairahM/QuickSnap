@@ -25,7 +25,23 @@ namespace CardGames
 			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
 			{
 				myGame.Start();
+				myGame.FlipNextCard();
 			}
+            if (myGame.IsStarted)
+            {
+                if (SwinGame.KeyTyped(KeyCode.vk_RSHIFT) && SwinGame.KeyTyped(KeyCode.vk_LSHIFT))
+                {
+                    //To Do: Add sound effects
+                }
+                else if (SwinGame.KeyTyped(KeyCode.vk_LSHIFT))
+                {
+                    myGame.PlayerHit(0);
+                }
+                else if (SwinGame.KeyTyped(KeyCode.vk_RSHIFT))
+                {
+                    myGame.PlayerHit(1);
+                }
+            }
 		}
 
 		/// <summary>
@@ -73,7 +89,7 @@ namespace CardGames
 
 			//Load the card images and set their cell details
             LoadResources();
-            
+
 			// Create the game!
 			Snap myGame = new Snap ();
 
