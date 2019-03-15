@@ -155,13 +155,12 @@ namespace CardGames.GameLogic
             }
 
 
-			// edited: stops the game...
-				
+
+
             _gameTimer.Stop();
 
             // stop the game...
             _started = false;
-
 		}
 
 		#region Snap Game Unit Tests
