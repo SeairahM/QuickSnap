@@ -3,7 +3,7 @@ using SwinGameSDK;
 
 #if DEBUG
 using NUnit.Framework;
-#endif 
+#endif
 
 
 namespace CardGames.GameLogic
@@ -97,7 +97,7 @@ namespace CardGames.GameLogic
                 _gameTimer.Start();     //edited for lab 2
 			}
 		}
-			
+
 		public void FlipNextCard()
 		{
 			if (_deck.CardsRemaining > 0)			// have cards...
@@ -130,7 +130,7 @@ namespace CardGames.GameLogic
         public int Score(int idx)
 		{
 			if ( idx >= 0 && idx < _score.Length )
-				return _score[idx]; 
+				return _score[idx];
 			else
 				return 0;
 		}
@@ -149,12 +149,21 @@ namespace CardGames.GameLogic
 				_score[player]++;
 				//TODO: consider playing a sound here...
 			}
+            else if (player >= 0 && player < _score.Length)
+            {
+                _score[player]--;
+            }
 
+<<<<<<< HEAD
 			// edited: stops the game...
-			_started = false;
+						_started = false;
             _gameTimer.Stop();
+=======
+            // stop the game...
+            _started = false;
+>>>>>>> origin/add-player-hit
 		}
-	
+
 		#region Snap Game Unit Tests
 		#if DEBUG
 
@@ -184,8 +193,7 @@ namespace CardGames.GameLogic
 			}
 		}
 
-		#endif 
+		#endif
 		#endregion
 	}
 }
-
